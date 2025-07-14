@@ -54,63 +54,6 @@
   }
 }
 
-# Playwright MCP Server Commands
-
-## Interaction Tools
-- `browser_click` - Click on elements
-  - element: CSS selector or accessibility label
-  - ref: Reference identifier
-  - doubleClick: Optional boolean for double-click
-- `browser_type` - Type text into elements
-  - element: Target element selector
-  - ref: Reference identifier
-  - text: Text to type
-  - submit: Optional boolean to submit form
-  - slowly: Optional boolean for slow typing
-- `browser_drag` - Drag elements
-  - startElement: Source element selector
-  - startRef: Source reference
-  - endElement: Target element selector
-  - endRef: Target reference
-- `browser_hover` - Hover over elements
-  - element: Element selector
-  - ref: Reference identifier
-- `browser_select_option` - Select dropdown options
-  - element: Select element selector
-  - ref: Reference identifier
-  - values: Array of option values
-- `browser_press_key` - Press keyboard keys
-  - key: Key to press (e.g., "Enter", "Escape")
-
-## Navigation Tools
-- `browser_navigate` - Navigate to URLs
-  - url: Target URL
-- `browser_navigate_back` - Go back in browser history
-- `browser_navigate_forward` - Go forward in browser history
-
-## Resource Tools
-- `browser_take_screenshot` - Take screenshots
-  - raw: Optional boolean for raw format
-  - filename: Optional output filename
-  - element: Optional specific element selector
-  - ref: Optional element reference
-- `browser_pdf_save` - Save page as PDF
-  - filename: Optional output filename
-
-## Utility Tools
-- `browser_close` - Close browser
-- `browser_resize` - Resize browser window
-  - width: Window width in pixels
-  - height: Window height in pixels
-
-## Tab Management Tools
-- `browser_tab_new` - Open new tab
-  - url: Optional URL to load
-- `browser_tab_select` - Switch to tab
-  - index: Tab index number
-- `browser_tab_close` - Close tab
-  - index: Optional tab index (current if not specified)
-
-## Operating Modes
-- **Snapshot Mode** (default): Uses accessibility tree for fast, structured interactions
-- **Vision Mode**: Uses screenshots for visual-based interactions
+# Testing Instructions
+Keep going until all the test cases in TESTCASES.md have been executed
+Provide a report at the end of test execution complete with screenshots and exact test duration per test case
