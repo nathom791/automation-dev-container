@@ -1,0 +1,36 @@
+{
+  "name": "Claude Code Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code @bitwarden/mcp-server @playwright/mcp && curl -L 'https://vault.bitwarden.com/download/?app=cli&platform=linux' -o bw.zip && unzip bw.zip && chmod +x bw && sudo mv bw /usr/local/bin/",
+  "postStartCommand": "nohup npx @bitwarden/mcp-server >/dev/null 2>&1 & nohup npx @playwright/mcp >/dev/null 2>&1 &",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylint"
+      ],
+      "settings": {
+        "claude.mcpServers": {
+          "bitwarden": {
+            "command": "npx",
+            "args": [
+              "@bitwarden/mcp-server"
+            ]
+          },
+          "playwright": {
+            "command": "npx",
+            "args": [
+              "@playwright/mcp"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
